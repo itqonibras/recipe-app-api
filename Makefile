@@ -1,4 +1,8 @@
-.PHONY: flake8 test migrate makemigrations shell createsuperuser build up down
+.PHONY: manage flake8 test migrate makemigrations shell createsuperuser build up down
+
+# Manage
+manage:
+	docker compose run --rm app sh -c "python manage.py $(cmd)"
 
 # Linting
 flake8:
